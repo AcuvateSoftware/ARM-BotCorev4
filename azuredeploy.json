@@ -47,6 +47,16 @@
                      "defaultValue": "ACU-BOT-APP-DEV",
                      "metadata": { "description": "Name of BotCore admin service Web App." }
               },
+              "BotCore Admin Service ASP.NET Core version":{
+                       "type": "string",
+                        "allowedValues": [
+                           ".NET Core 2.2",
+                           ".NET Core 2.1",
+                            ".NET Core 2.0"
+                        ],
+                       "defaultValue": ".NET Core 2.2",
+                       "metadata": { "description": "Select asp.net core version for admin service Web App." }
+              },
               "Redis Cache": {
                      "type": "string",
                      "minLength": 1,
@@ -304,6 +314,7 @@
                      },
                      "properties": {
                            "name": "[parameters('BotCore Admin Service Web App')]",
+                            "version": "[parameters('BotCore Admin Service ASP.NET Core version')]",
                            "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('BotCore App Service Plan'))]"
                      }
               },
